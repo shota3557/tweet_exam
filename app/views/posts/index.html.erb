@@ -1,4 +1,8 @@
-<h1>あなたがボヤいたこと</h1>
+<header>
+  <h1>あなたがボヤいたこと</h1>
+</header>  
+
+<p><%= notice %></p>
 
 <table>
   <tr>
@@ -8,7 +12,17 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.content %></td>
+    <td><%= link_to 'ボヤいた内容見る', post_path(post.id) %></td>
+    <td><%= link_to 'ボヤいた内容を修正', edit_post_path(post.id), data: { confirm: '本当に編集するよ？' } %></td>
+    <td><%= link_to 'ボヤいた内容を消す', post_path(post.id), method: :delete ,data: { confirm: '本当にボヤき消しちゃうよ？' } %></td>
   </tr>
 <% end %>  
 </table>
- <%= link_to 'ボヤきますか',new_post_path %>
+
+<br>
+
+<%= link_to '新しくボヤく',new_post_path %>
+
+<footer>
+  <p>課題</p>
+</footer>

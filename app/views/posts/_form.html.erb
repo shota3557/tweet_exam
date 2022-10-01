@@ -1,0 +1,21 @@
+<%= form_with(model: @post, local: true ,url: choose_new_or_edit ) do |form| %>
+  <% if @post.errors.any? %>
+    <div class="error_message">
+      <h2>エラー</h2>
+      <p>contentは1文字以上140文字以下で入力してください</p>
+    </div>
+  <% end %>
+  <div class="content">
+    <%= form.label :ツイート内容 %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="button">
+    <%= form.submit %>
+  </div>
+  <div class="back_button">
+    <%= link_to "ツイート一覧画面にもどる", posts_path, class: "back_link"  %>
+  </div>
+<% end %>
+<footer>
+  <p>課題</p>
+</footer>

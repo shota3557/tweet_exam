@@ -1,0 +1,16 @@
+header {
+    width: 100%;
+    background-color: gold;
+    color: black;
+    text-align: center;
+  }
+  footer {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+    height: 5%;
+	background-color: gold;
+	color: black;
+	text-align: center;
+}
